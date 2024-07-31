@@ -1,0 +1,58 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --mainBackground:#1A3636;
+  --mainColor:#6EACDA;
+}
+
+
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--mainBackground)!important;
+  color:var(--mainColor)!important;
+}
+
+
+
+.board{
+  position: relative;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  width:100px;
+  height:50px;
+  border:2px solid var(--mainColor);
+  color:var(--mainColor)
+}
+
+.btnClick{
+  width:100px;
+  height:50px;
+  padding:5px;
+  margin:5px;
+  background-color: var(--mainBackground);
+  color: var(--mainColor);
+}
+
+.btn:hover{
+  cursor: pointer;
+
+}
+
+.play-button{
+  width:200px;
+  height:50px;
+  padding:5px;
+}
+.game{
+  box-shadow: 5px 5px 5px 5px var(--mainColor);
+}
