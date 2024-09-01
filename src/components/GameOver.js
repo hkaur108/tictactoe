@@ -11,12 +11,12 @@ export default function GameOver() {
     }
 
   return (
-    <div className='w-75 vh-75 p-5 m-5 mx-auto game'>
+    <div className='w-75 vh-75 p-5 m-5 mx-auto game formStyling'>
       <div className='text-center p-3 m-3'>
-         <h3> Thanks for Playing!</h3>
+         <h3 className='text-secondary'> Thanks for Playing!</h3>
       </div>
      <div className='d-flex justify-content-center'>
-        <button className=' btn btn-outline play-button' onClick={navigateToForm}>Play Again!</button>
+        <button className=' btn btn-outline play-button text-secondary' onClick={navigateToForm}>Play Again!</button>
      </div>
     </div>
   )

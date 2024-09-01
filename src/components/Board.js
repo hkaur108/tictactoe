@@ -5,6 +5,7 @@ import Block from './Block';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import Score from './Score';
+import { DeclareWinner } from './DeclareWinner';
 
 
 
@@ -73,7 +74,6 @@ export default function Board() {
         if(checkWinner(states) || states[i]){
             return
         }
-        console.log(nextSquares)
     checkWinner(nextSquares);
     xIsNext?nextSquares[i]="X":nextSquares[i]="O";
     setstates(nextSquares)
@@ -102,8 +102,12 @@ export default function Board() {
 
 return (
     <>
-    <h1 className='text-center p-2 m-1  text-decoration-underline'>Tic Tac Toe Game</h1>
-    <h2 className='text-center p-3 m-1 text-capitalize '>{status}</h2>
+    <div className='gameBack'>
+        <div className='formStylingBoard mx-auto py-1 mt-5'>
+    <h4 className='text-center p-1 mt-5 text-secondary '>{status}!</h4>
+    {/* <div className='d-flex align-items-center jusitfy-content-center mx-aut'>
+        <DeclareWinner/>
+    </div> */}
     <Score names={names} scorePlayer1 ={scorePlayer1} scorePlayer2={scorePlayer2}/>
     <div className='position-relative w-100 h-100 mx-auto'>
         <div className='w-50 mx-auto p-3 d-flex align-items-center justify-content-center'>
@@ -125,12 +129,18 @@ return (
         </div>
     </div>
     <div className='d-flex justify-content-center'>
-        <button type='button' className='m-2 btn btn-outline p-1' onClick={()=>handleRefresh()}>Restart</button>
+        <button type='button' className='m-2 btn btn-outline p-1 text-secondary' onClick={()=>handleRefresh()}>Restart</button>
     </div>
-     <div className='d-flex align-items-center justify-content-center m-3'>
-        {winner ?<button className='btn btn-outline' onClick={handlePlayAgain}>Play another game!</button>:<button className='btn btn-outline' onClick={navigateToGameOver}>Exit</button>}
+    <div className='d-flex align-items-center justify-content-center m-3'>
+        {winner ?<button className='btn btn-outline w-25 text-secondary text-wrap' onClick={handlePlayAgain}>Play another game!</button>:<button className='btn btn-outline text-secondary' onClick={navigateToGameOver}>Exit</button>}
     </div>
     </div>
+
+    </div>
+
+    </div>
+   
+   
     
    
 
